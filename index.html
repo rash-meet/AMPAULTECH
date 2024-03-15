@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMPAUL TECH - Virtual Business Card</title>
+    <link rel="icon" href="ampaul_logo.png"
+              type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <img src="ampaul_bg.png" alt="AMPAUL TECH Logo" class="logo">
+        <h1 class="hehe">AMPAUL TECH</h1>
+        <h3>AI CONSULTANTS
+        </h3>
+        <!-- <p class="tagline">AI CONSULTANTS</p> -->
+        <p class="tagline">CONTACT US ON: </p>
+        <a href="mailto:ampaultech@gmail.com" class="btn">Email at ampaultech@gmail.com</a>
+        <button class="btn" id="shareBtn">Share</button>
+    </div>
+
+    <script>
+        document.getElementById('shareBtn').addEventListener('click', async () => {
+            try {
+                await navigator.share({
+                    title: 'Check out AMPAUL TECH!',
+                    text: 'Get a GPT AI BOT trained on your data.',
+                    url: window.location.href
+                });
+                console.log('Shared successfully');
+            } catch (error) {
+                console.error('Error sharing:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>
