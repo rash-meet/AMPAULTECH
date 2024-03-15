@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMPAUL TECH - Virtual Business Card</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4CAF50, #008CBA); /* Gradient background */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .hehe{
+            margin-top: 0;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            /* margin-bottom: 20px; */
+        }
+
+        .tagline {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #4CAF50;
+            text-decoration: none;
+            border-radius: 5px;
+            border-color: #fff;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            .logo {
+                width: 100px;
+            }
+            .tagline {
+                font-size: 16px;
+            }
+            .btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="ampaul_bg.png" alt="AMPAUL TECH Logo" class="logo">
+        <h1 class="hehe">AMPAUL TECH</h1>
+        <p class="tagline">GET A GPT AI BOT TRAINED ON YOUR DATA</p>
+        <a href="mailto:ampaultech@gmail.com" class="btn">Email at ampaultech@gmail.com</a>
+        <button class="btn" id="shareBtn">Share</button>
+    </div>
+
+    <script>
+        document.getElementById('shareBtn').addEventListener('click', async () => {
+            try {
+                await navigator.share({
+                    title: 'Check out AMPAUL TECH!',
+                    text: 'Get a GPT AI BOT trained on your data.',
+                    url: window.location.href
+                });
+                console.log('Shared successfully');
+            } catch (error) {
+                console.error('Error sharing:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>
